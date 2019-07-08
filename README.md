@@ -78,8 +78,8 @@ the `main.py` function shows some small results that let you appreciate the deco
 Main class
 ---------------------
 Looping with 900 stacks
-Ellapsed time for recursion, 100 steps: 0.2655048370361328
-Ellapsed time for tail recursion, 100 steps: 9.297344207763672
+Ellapsed time for recursion, 10000 steps: 0.2655048370361328
+Ellapsed time for tail recursion, 10000 steps: 9.297344207763672
 ---------------------
 Looping with 1000 stacks
 Computation failed for recursive method: max stack
