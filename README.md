@@ -67,8 +67,7 @@ def f(stack, k):
 	return 1 * f(stack, k-1)  # fails to compile
 ```
 
-This is expected for tail recursion. On the other hand, the code now performs much faster and with much more
-available iteration steps than before.
+This is expected for tail recursion. On the other hand, the code now performs for a large number of iterations.
 
 Small benchmarks and stack test
 -------------------------------
@@ -79,17 +78,13 @@ the `main.py` function shows some small results that let you appreciate the deco
 Main class
 ---------------------
 Looping with 900 stacks
-Ellapsed time for recursion, 100 steps: 2.7686233520507812
-Ellapsed time for tail recursion, 100 steps: 0.006984233856201172
-Speed gain:  39541.04594797569% of gain
+Ellapsed time for recursion, 100 steps: 0.2655048370361328
+Ellapsed time for tail recursion, 100 steps: 9.297344207763672
 ---------------------
 Looping with 1000 stacks
 Computation failed for recursive method: max stack
 Computation done for tail recusrive method; ellapsed time: 0.0
 ---------------------
-Looping with 50.000 stacks
-Computation failed for recursive method: max stack
-Computation done for tail recusrive method; ellapsed time: 0.0
 ```
 
 How it works

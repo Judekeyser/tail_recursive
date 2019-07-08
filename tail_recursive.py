@@ -20,6 +20,7 @@ class Proxy:
 			x = self.CONTINUE
 			while x == self.CONTINUE:
 				x = self.wrapped(*self.stored_args, **self.stored_kwargs)
+			self.first_time = True
 			return x
 		return self.CONTINUE
 
