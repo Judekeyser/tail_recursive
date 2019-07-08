@@ -32,7 +32,7 @@ def benchmark():
 	t2 = time.time()
 	z1 = t2 - t1
 	t1 = time.time()
-	for i in range(0,10000):
+	for i in range(0,1000):
 		g(1, 900)
 	t2 = time.time()
 	z2 = t2 - t1
@@ -55,9 +55,6 @@ def benchmark():
 		print("Computation failed for tail recursive method: max stack")
 	print("---------------------")
 
-
-def new_stack(stack):
-	return 0.5 * (stack + 2/stack)
 
 
 if __name__ == '__main__':

@@ -11,23 +11,26 @@ class Proxy:
 		self.CONTINUE = ContinueState()
 		self.stored_args = None
 		self.stored_kwargs = None
+
 	
-	def do(self, args, kwargs):
-		self.stored_args = args
-		self.stored_kwargs = kwargs
-		if self.first_time:
-			self.first_time = False
-			x = self.CONTINUE
-			while x == self.CONTINUE:
-				x = self.wrapped(*self.stored_args, **self.stored_kwargs)
-			self.first_time = True
-			return x
-		return self.CONTINUE
+	def do(self):
+		while True:
+			x = self.wrapped(*self.stored_args, **self.stored_kwargs)
+			if not x == self.CONTINUE: break
+		return x
+	
 
 
 def tail_recursive(f):
 	proxy = Proxy(f)
 	def g(*args, **kwargs):
-		return proxy.do(args, kwargs)
+		proxy.stored_args = args
+		proxy.stored_kwargs = kwargs
+		if not proxy.first_time: return proxy.CONTINUE
+		proxy.first_time = False
+		x = proxy.do()
+		proxy.first_time = True
+		return x
 	return g
+
 
