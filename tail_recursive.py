@@ -20,7 +20,6 @@ class Proxy:
 		return x
 	
 
-
 def tail_recursive(f):
 	proxy = Proxy(f)
 	def g(*args, **kwargs):
@@ -32,5 +31,4 @@ def tail_recursive(f):
 		proxy.first_time = True
 		return x
 	return g
-
 

@@ -39,18 +39,19 @@ def benchmark():
 	print("Ellapsed time for recursion, 100 steps:", z1)
 	print("Ellapsed time for tail recursion, 100 steps:", z2)
 	print("---------------------")
-	print("Looping with 1000 stacks")
+	print("Computation time is a linear function of N")
+	print("Looping with N = 1.000.000 stacks")
 	try:
-		f(1, 1000)
+		f(1, 100000)
 		print("Computation done for recusrive method")
 	except:
 		print("Computation failed for recursive method: max stack")
 	try:
 		t1 = time.time()
-		g(1, 1000)
+		g(1, 1000000)
 		t2 = time.time()
 		z = t2-t1
-		print("Computation done for tail recusrive method; ellapsed time:", z)
+		print("Computation done for tail recusrive method; ellapsed time:", str(z))
 	except:
 		print("Computation failed for tail recursive method: max stack")
 	print("---------------------")
