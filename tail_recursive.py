@@ -16,7 +16,7 @@ class Proxy:
 	def do(self):
 		while True:
 			x = self.wrapped(*self.stored_args, **self.stored_kwargs)
-			if not x == self.CONTINUE: break
+			if x is not self.CONTINUE: break
 		return x
 	
 
